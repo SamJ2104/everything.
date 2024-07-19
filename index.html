@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>everything.</title>
+    <style>
+        h1{
+            font-size: 2.5em;
+        }
+        body {
+            color: #fff;
+            font-family: "Open Sans", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121826;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .box {
+            background-color: #394150;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .box h2 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .box p {
+            margin: 0 0 20px;
+            font-size: 1em;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>everything.</h1>
+    <div class="container" id="container"></div>
+
+    <script>
+        const data = [
+            {
+                "title": "SamJ.App",
+                "description": "Main site",
+                "url": "http://samj.app"
+            },
+            {
+                "title": "Lessons",
+                "description": "What Lessons I Have",
+                "url": "http://lessons.samj.app"
+            },
+            {
+                "title": "Five Fingers",
+                "description": "dildo barcode scanner prank thing",
+                "url": "http://fivefingers.samj.app"
+            },
+            {
+                "title": "SamJ Games",
+                "description": "Lots of Games, built in unblocker",
+                "url": "http://games.samj.app"
+            },
+            {
+                "title": "Masker",
+                "description": "Masks urls to look more official",
+                "url": "http://masker.samj.app"
+            },
+            {
+                "title": "SamJ Sports",
+                "description": "Watch Any Sports",
+                "url": "http://sports.samj.app"
+            },
+            {
+                "title": "SwitchQuip",
+                "description": "SwitchQuip encoding, undecodable by computers",
+                "url": "http://switchquip.samj.app"
+            },
+            {
+                "title": "Message Me",
+                "description": "Send a message to me",
+                "url": "http://message.samj.app"
+            },
+            {
+                "title": "Translate",
+                "description": "Fake translate tool",
+                "url": "http://translate.samj.app"
+            },
+            {
+                "title": "Wordle Tommorow",
+                "description": "A game of worldle powered by crystal Balls",
+                "url": "http://wordle.samj.app"
+            },
+            {
+                "title": "GHide Backend",
+                "description": "Backend for GHide",
+                "url": "http://google.samj.app"
+            },
+            {
+                "title": "Dice",
+                "description": "Rigged Dice Roller",
+                "url": "http://dice.samj.app"
+            },
+            {
+                "title": "SamJ Chat",
+                "description": "Chat app",
+                "url": "http://chat.samj.app"
+            },
+            {
+                "title": "URL Shortener",
+                "description": "URL shortener tool",
+                "url": "http://url.samj.app"
+            },
+            {
+                "title": "Who Sait It",
+                "description": "WhatsApp groupchat game",
+                "url": "http://whatsapp.samj.app"
+            },
+            {
+                "title": "You Might Like",
+                "description": "AI Recommendations",
+                "url": "http://youmightlike.samj.app"
+            },
+            {
+                "title": "Shady URL",
+                "description": "Makes a url look dodgey",
+                "url": "http://shady-url.samj.app"
+            },
+            {
+                "title": "PWA API",
+                "description": "API for making things into a Progressive Web App",
+                "url": "http://pwa.samj.app"
+            },
+            {
+                "title": "CORS Proxy",
+                "description": "CORS Proxy for SamJ Movies",
+                "url": "http://cors.samj.app"
+            },
+            {
+                "title": "A Proxy",
+                "description": "im guessing its a proxy for something i forgot though",
+                "url": "http://proxy.samj.app"
+            },
+            {
+                "title": "Coin Flip",
+                "description": "Rigged Coin flip tool",
+                "url": "http://coinflip.samj.app"
+            },
+            {
+                "title": "Preview Proxy",
+                "description": "Shows a preview of the site",
+                "url": "http://preview.samj.app"
+            },
+            {
+                "title": "Icon API",
+                "description": "API to find icon sources from urls",
+                "url": "http://icon.samj.app"
+            },
+            {
+                "title": "Flags Game",
+                "description": "Guess what the flag is",
+                "url": "http://flags.samj.app"
+            },
+            {
+                "title": "SamJ Music",
+                "description": "Listen to Unblocked Music",
+                "url": "http://music.samj.app"
+            },
+            {
+                "title": "Ghide",
+                "description": "Mask Any URL as a Google URL with the passcode as the searchbar",
+                "url": "http://ghide.samj.app"
+            },
+            {
+                "title": "Xhide",
+                "description": "Like GHide but works with any site, unlock by clicking in the top left corner.",
+                "url": "http://xhide.samj.app"
+            },
+            {
+                "title": "SamJ Videos",
+                "description": "Unblocked YouTube frontend, ad-free",
+                "url": "http://videos.samj.app"
+            },
+            {
+                "title": "Todays Mission",
+                "description": "Gives you a random mission",
+                "url": "http://mission.samj.app"
+            },
+            {
+                "title": "SamJ Books",
+                "description": "Site for free books, probably down",
+                "url": "http://books.samj.app"
+            },
+            {
+                "title": "AITA",
+                "description": "Am I The Asshole Game",
+                "url": "http://aita.samj.app"
+            },
+            {
+                "title": "SamJ Movies",
+                "description": "Watch Any Movie for free with no ads ever ever",
+                "url": "http://movies.samj.app"
+            },
+            {
+                "title": "Do It",
+                "description": "ToDo site, made in 10 minutes",
+                "url": "http://doit.samj.app"
+            },
+        ];
+
+        const container = document.getElementById('container');
+
+        data.forEach(item => {
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.onclick = () => window.location.href = item.url;
+
+            const title = document.createElement('h2');
+            title.textContent = item.title;
+            box.appendChild(title);
+
+            const description = document.createElement('p');
+            description.textContent = item.description;
+            box.appendChild(description);
+
+            container.appendChild(box);
+        });
+    </script>
+</body>
+</html>
